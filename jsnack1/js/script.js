@@ -4,19 +4,22 @@
 // in verde i numeri pari.
 
 const numbers = [1, 4, 6, 44, 49, 33, 58, 35, 11, 33, 22, 29, 100];
-let evenNubers = [];
+let evenNumbers = [];
 let oddNumbers = [];
 
 const redBox = document.getElementById("box-text-red");
 const greenBox = document.getElementById("box-text-green");
 
 for (let i = 0; i < numbers.length; i++) {
-    
-    if (i % 2 === 0) {
-        evenNubers = numbers[i].push;
-    } 
 
-    redBox.innerHTML = evenNumbers;
-    greenBox.innerHTML = oddNumbers;
+    let thisNumber = numbers[i];
+
+    if (thisNumber % 2 !== 0) {
+        oddNumbers.push(thisNumber);
+    } else {
+        evenNumbers.push(thisNumber);
+    }
 }
 
+redBox.innerHTML = oddNumbers;
+greenBox.innerHTML = evenNumbers;
